@@ -10,19 +10,19 @@ function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/">
-            <PageHome />
-          </Route>
-          <Route path="/partners">
-            <PagePartners />
-          </Route>
-          <Route path="/team">
-            <PageTeam />
-          </Route>
-          <Route path="/locations">
-            <PageLocations />
-          </Route>
-        </Switch>
+        <Route exact path="/">
+          <PageHome />
+        </Route>
+        <Route path="/partners">
+          <PagePartners />
+        </Route>
+        <Route path="/team">
+          <PageTeam />
+        </Route>
+        <Route path="/locations">
+          <PageLocations />
+        </Route>
+      </Switch>
     </Router>
   );
 }
