@@ -12,7 +12,7 @@ const PageHome = () => (
           <Typography variant="h2" component="h1" gutterBottom>
             JUNO
           </Typography>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" component="h2" gutterBottom>
             A global genomic survey of Streptococcus agalactiae
           </Typography>
         </Box>
@@ -71,6 +71,59 @@ const PageHome = () => (
             </Typography>
           </Box>
         </Grid>
+      </Grid>
+      <Grid item container xs={12} alignItems="center">
+        <Grid item xs={9}>
+          <Box color="white" p={2}>
+            <Typography>
+              <strong>Our mission</strong>
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in
+              pellentesque lectus, eget pretium elit. Sed ut ligula rutrum velit
+              varius elementum. Proin iaculis tincidunt massa. Etiam id
+              consectetur lectus, at rutrum ipsum. Nam commodo mauris odio, sed
+              efficitur urna luctus vitae. Aliquam et lectus in massa ornare
+              euismod quis in augue. Vestibulum rutrum ante a maximus rutrum.
+              Aliquam sit amet ligula et lorem ullamcorper faucibus convallis a
+              lorem. Fusce eleifend arcu eu felis rutrum, eu posuere diam
+              aliquet. Praesent hendrerit placerat odio, nec pulvinar mi cursus
+              quis. Ut nec eros erat. Integer gravida mauris non augue pulvinar
+              faucibus. Vestibulum mauris nunc, viverra id massa in, elementum
+              placerat magna. Nullam elementum, quam sed blandit porttitor, urna
+              tellus feugiat est, sit amet tempus lorem diam non dolor.
+              Suspendisse nibh quam, euismod quis mi non, viverra tristique
+              tellus.
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={3}>
+          <CircularImage
+            src="cc17-square.png"
+            alt="Phylogenetic tree. Image credit: Jamrozy et al., 2018. Biorxiv. Wellcome Sanger Institute"
+            title="Image credit: Jamrozy et al., 2018. Biorxiv. Wellcome Sanger Institute"
+          />
+        </Grid>
+      </Grid>
+      <Grid item xs={12} alignItems="center">
+        <Box color="white" p={2}>
+          <Typography>
+            <strong>Selected publications</strong>
+            <ul>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                in pellentesque lectus, eget pretium elit.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                in pellentesque lectus, eget pretium elit.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                in pellentesque lectus, eget pretium elit.
+              </li>
+            </ul>
+          </Typography>
+        </Box>
       </Grid>
     </Grid>
   </Page>
