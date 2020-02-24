@@ -10,10 +10,10 @@ const PageHome = () => (
       <Grid item xs={12}>
         <Box textAlign="center" color="white">
           <Typography variant="h2" component="h1" gutterBottom>
-            JUNO
+            <strong>JUNO</strong>
           </Typography>
           <Typography variant="h5" component="h2" gutterBottom>
-            A global genomic survey of Streptococcus agalactiae
+            <strong>A global genomic survey of Streptococcus agalactiae</strong>
           </Typography>
         </Box>
       </Grid>
