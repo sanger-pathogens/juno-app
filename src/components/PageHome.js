@@ -1,5 +1,7 @@
 import React from 'react';
 
-const PageHome = () => <div>Home</div>
+import Page from './Page';
+
+const PageHome = () => <Page>Home</Page>;
 
 export default PageHome;

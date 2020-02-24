@@ -1,5 +1,7 @@
 import React from 'react';
 
-const PageTeam = () => <div>Team</div>
+import Page from './Page';
+
+const PageTeam = () => <Page>Team</Page>;
 
 export default PageTeam;

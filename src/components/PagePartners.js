@@ -1,5 +1,7 @@
 import React from 'react';
 
-const PagePartners = () => <div>Partners</div>
+import Page from './Page';
+
+const PagePartners = () => <Page>Partners</Page>;
 
 export default PagePartners;
