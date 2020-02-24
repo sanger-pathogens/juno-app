@@ -45,7 +45,11 @@ const PageHome = () => (
       </Grid>
       <Grid item container xs={12} alignItems="center">
         <Grid item xs={3}>
-          <CircularImage src="GBS-square.png" />
+          <CircularImage
+            src="GBS-square.png"
+            alt="Streptococcus agalactiae. Image credit: CDC"
+            title="Image credit: CDC"
+          />
         </Grid>
         <Grid item xs={9}>
           <Box color="white" p={2}>
