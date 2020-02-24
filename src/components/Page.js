@@ -30,7 +30,7 @@ const Page = ({ children }) => {
       <Grid
         container
         justify="center"
-        spacing={24}
+        spacing={1}
         className={classes.gridContainer}
       >
         <Grid item xs={12} md={11}>
