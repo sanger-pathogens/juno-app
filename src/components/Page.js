@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 const useStyles = makeStyles({
   page: {
-    background: `linear-gradient(135deg, #6868BE 0%, #8BABE4 60%, #FBECD2 100%)`,
+    background: `linear-gradient(135deg, #6868BE 10%, #8BABE4 60%, #FBECD2 100%)`,
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
