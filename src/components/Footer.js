@@ -5,8 +5,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const Footer = () => (
-  <Box m={1} color="white">
-    <Grid container alignItems="center" justify="space-between" spacing={24}>
+  <Box m={4} color="white">
+    <Grid container alignItems="center" justify="space-between" spacing={4}>
       <Grid item>
         <img src="SangerLogo.9423243b.png" width="166" />
       </Grid>

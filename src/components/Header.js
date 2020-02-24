@@ -3,8 +3,8 @@ import { Box, Grid, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const Header = () => (
-  <Box m={1} color="white">
-    <Grid container alignItems="center" justify="space-between" spacing={24}>
+  <Box m={4} color="white">
+    <Grid container alignItems="center" justify="space-between" spacing={4}>
       <Grid item>
         <img src="JunoLogo.svg" height="57px" />
       </Grid>
