@@ -1,0 +1,198 @@
+[
+    {
+        "name": "Prof. Morven Edwards",
+        "affiliation": "Baylor College of Medicine, Houston, TX, USA."
+    },
+    {
+        "name": "Prof. Vince Fischetti",
+        "affiliation": "Rockefeller University, New York, NY, USA."
+    },
+    {
+        "name": "Prof. Androulla Efstratiou",
+        "affiliation": "WHO Global Collaborating Centre for Streptococcal Infections, Public Health England, London, UK."
+    },
+    {
+        "name": "Dr. Annaliesa Anderson",
+        "affiliation": "Bacterial Vaccines, Pfizer, New York, NY, USA."
+    },
+    {
+        "name": "Prof. Shabir Madhi",
+        "affiliation": "University of Witwatersrand, Johanseburg, South Africa. MRC Respiratory and Meningeal Pathogens Research Unit, Diepkloof, Soweto, South Africa."
+    },
+    {
+        "name": "Dr. Lesley McGee",
+        "affiliation": "StrepLab, Centers for Disease Control and Prevention, Atlanta, GA, USA."
+    },
+    {
+        "name": "Dr. David Aanensen",
+        "affiliation": "Centre for Genomic Pathogen Surveillance, Cambridge, UK."
+    },
+    {
+        "name": "Dr.Vicki Chalker",
+        "affiliation": "Respiratory and Vaccine Preventable Bacteria Reference Unit, Public Health England, London, UK."
+    },
+    {
+        "name": "Dr. Anna Seale",
+        "affiliation": "London School of Hygiene & Tropical Medicine, London, UK. Child Health and Mortality Prevention Surveillance (CHAMPS) network."
+    },
+    {
+        "name": "Prof. Ravi L. Kumar",
+        "affiliation": "Central Research Lab, Kempegowda Institute of Medical Sciences Hospital, Bangalore, India."
+    },
+    {
+        "name": "Prof. Ruth Zadoks",
+        "affiliation": "Professor of Molecular Epidemiology at the University of Glasgow, Glasgow, UK."
+    },
+    {
+        "name": "Prof. Mark Holmes",
+        "affiliation": "Department of Veterinary Medicine, University of Cambridge, Cambridge, UK."
+    },
+    {
+        "name": "Prof. Sylvester Moyo",
+        "affiliation": "Namibia University of Science and Technology, Windhoek, Namibia."
+    },
+    {
+        "name": "Dr. Kirsty le Doare",
+        "affiliation": "Imperial College London, London, UK."
+    },
+    {
+        "name": "Beza Mucheye Gizachew",
+        "affiliation": "University of Gondar, Gondar, Ethiopia."
+    },
+    {
+        "name": "Dr. Edward Okosun",
+        "affiliation": "University of Benin Teaching Hospital, Benin City, Nigeria."
+    },
+    {
+        "name": "Prof. Samir Saha",
+        "affiliation": "Dhaka Shishu Hospital, Dhaka, Bangladesh."
+    },
+    {
+        "name": "Prof. Gwendolyn Gilbert",
+        "affiliation": "University of Sydney, Sydney, Australia."
+    },
+    {
+        "name": "Prof. Vitali Sintchenko",
+        "affiliation": "University of Sydney, Sydney, Australia."
+    },
+    {
+        "name": "Prof. Margaret Ip",
+        "affiliation": "Prince of Wales Hospital, Hong Kong."
+    },
+    {
+        "name": "Prof. Stephen Obaro",
+        "affiliation": "University of Nebraska Medical Center, Omaha, NE, USA."
+    },
+    {
+        "name": "Prof. Iruka Okeke",
+        "affiliation": "University of Ibadan, Ibadan, Nigeria."
+    },
+    {
+        "name": "Prof. Claire Poyart",
+        "affiliation": "Centre national de référence des Streptocoques, Paris France. Institut National de la Santé et de la Recherche Médicale (INSERM)."
+    },
+    {
+        "name": "Prof. Rob Heyderman",
+        "affiliation": "University College London, UK."
+    },
+    {
+        "name": "Dr. Elita Jauneikaite",
+        "affiliation": "Imperial College London, UK."
+    },
+    {
+        "name": "Dr. Nick Croucher",
+        "affiliation": "Imperial College London, UK."
+    },
+    {
+        "name": "Dr. Merijn Bijlsma",
+        "affiliation": "Amsterdam Medical Center, Amsterdam, Netherlands."
+    },
+    {
+        "name": "Dr. John Lees",
+        "affiliation": "New York University, New York, NY, USA."
+    },
+    {
+        "name": "Dr. Ekaterina Egorova",
+        "affiliation": "Laboratory of Clinical Microbiology and Biotechnology, Moscow Research Institute for Epidemiology and Microbiology, Moscow, Russia."
+    },
+    {
+        "name": "Dr. Wasana Kudagammana",
+        "affiliation": "University of Peradeniya, Sri Lanka."
+    },
+    {
+        "name": "Dr. Balaji Veeraraghavan",
+        "affiliation": "Christian Medical College & Hospital, Vellore, India."
+    },
+    {
+        "name": "Dr. Marcelo Pilonetto",
+        "affiliation": "Pontifical Catholic University of Paraná, Curitiba Campus, Curitiba, Brasil."
+    },
+    {
+        "name": "Dr. Suna Kizilyildirim",
+        "affiliation": "Cukurova University, Adana, Turkey."
+    },
+    {
+        "name": "Antoaneta Decheva",
+        "affiliation": "National reference laboratory of Streptococci and Corynebacteria, Sofia, Bulgaria."
+    },
+    {
+        "name": "Dr. Nicholas Legakis",
+        "affiliation": "University of Athens, Athens, Greece."
+    },
+    {
+        "name": "Dr. Gilho Lee",
+        "affiliation": "Dankook University, Yongin, South Korea."
+    },
+    {
+        "name": "Prof. Marta Mollerach",
+        "affiliation": "Universidad de Buenos Aires, Buenos Aires, Argentina. "
+    },
+    {
+        "name": "Dr. Baharak Afshar",
+        "affiliation": "Respiratory and Systemic Infection Laboratory, Health Protection Agency, Microbiology Services Division, London, UK."
+    },
+    {
+        "name": "Dr. Roberta Creti",
+        "affiliation": "Istituto Superiore di Sanità, Rome, Italy."
+    },
+    {
+        "name": "Prof. Jaana Vuopio",
+        "affiliation": "University of Turku, Turku, Finland."
+    },
+    {
+        "name": "Dr. Barbara Spellerberg",
+        "affiliation": "Institut für Medizinische Mikrobiologie und Hygiene, Ulm, Germany."
+    },
+    {
+        "name": "Prof. Marcus Hufnagel",
+        "affiliation": "Universitätsklinikum Freiburg, Freiburg, Germany."
+    },
+    {
+        "name": "Dr. Uffe B. Skov Sørensen",
+        "affiliation": "University of Turku, Turku, Finland."
+    },
+    {
+        "name": "Prof Alexander Suvorov",
+        "affiliation": "Saint Petersburg State University, Saint Petersburg, Russia."
+    },
+    {
+        "name": "Dr. Tatiana de Castro Abreu Pinto",
+        "affiliation": "Universidade Federal do Rio de Janeiro, Rio de Janeiro, Brasil."
+    },
+    {
+        "name": "Dr. Felipe Velasco",
+        "affiliation": "Universidad de la Sabana, Chía, Cundinamarca, Colombia."
+    },
+    {
+        "name": "Dinah Seligsohn",
+        "affiliation": "National Veterinary Institute,Uppsala, Sweden."
+    },
+    {
+        "name": "Prof. Ulisses de Padua Pereira",
+        "affiliation": "Universidade Estadual de Londrina, Londrina, Brasil."
+    },
+    {
+        "name": "Dr. Nadja Alexandra Vielot",
+        "affiliation": "University of North Carolina at Chapel Hill, Chapel Hill, NC, USA."
+    }
+]
