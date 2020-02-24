@@ -40,7 +40,11 @@ const PageHome = () => (
           </Box>
         </Grid>
         <Grid item xs={3}>
-          <CircularImage src="globe3-square.png" />
+          <CircularImage
+            src="globe3-square.png"
+            alt="Globe. Image credit: Christine J. Boinett"
+            title="Image credit: Christine J. Boinett"
+          />
         </Grid>
       </Grid>
       <Grid item container xs={12} alignItems="center">
