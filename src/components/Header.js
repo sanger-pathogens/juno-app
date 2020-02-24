@@ -18,7 +18,7 @@ const Header = () => (
         <Button color="inherit" to="/locations" component={Link}>
           Where we work
         </Button>
-        <Button color="inherit" href="/partners" component={Link}>
+        <Button color="inherit" to="/partners" component={Link}>
           Partners
         </Button>
       </Grid>
