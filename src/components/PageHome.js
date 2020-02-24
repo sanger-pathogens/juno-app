@@ -42,8 +42,8 @@ const PageHome = () => (
         <Grid item xs={3}>
           <CircularImage
             src="globe3-square.png"
-            alt="Globe. Image credit: Christine J. Boinett"
-            title="Image credit: Christine J. Boinett"
+            alt="Globe. Image credit: Christine J. Boinett, Wellcome Sanger Institute"
+            title="Image credit: Christine J. Boinett, Wellcome Sanger Institute"
           />
         </Grid>
       </Grid>
