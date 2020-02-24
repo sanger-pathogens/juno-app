@@ -6,7 +6,7 @@ const Header = () => (
   <Box m={4} color="white">
     <Grid container alignItems="center" justify="space-between" spacing={4}>
       <Grid item>
-        <img src="JunoLogo.svg" height="57px" />
+        <img src="JunoLogo.svg" height="57px" alt="Juno logo" />
       </Grid>
       <Grid item>
         <Button color="inherit" to="/" component={Link}>
