@@ -1,0 +1,5 @@
+### What is Streptococcus agalactiae 
+
+*S. agalactiae* or group B streptococcus (GBS) is a commensal bacterium and an opportunistic pathogen. GBS can be carried in the intestinal or lower genital tracts of healthy women. There is a risk that GBS can be transmitted to a baby during childbirth and may cause life-threatening infections in the newborn such as sepsis, pneumoniae and meningitis.The mortality rates of GBS infected infants are highest in low- and middle-income countries (LMICs), where disease prevention strategies are less often implemented or have low coverage. 
+ 
+A major virulence factor of GBS is its capsular polysaccharide (CPS), which mediates evasion of host’s immune system. GBS isolates can be distinguished based on different CPS serotypes. To date, ten distinct serotypes of GBS have been described (Ia, Ib and II-IX), and their prevalence is known to vary both temporally and geographically. CPS-based vaccines against GBS for maternal immunization during pregnancy are currently under development and we need more information on the global distribution of the different CPS serotypes to be able to predict regional vaccine coverage.   

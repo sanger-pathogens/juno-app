@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Professor Stephen D. Bentley",
+        "role": "Team Leader",
+        "imageUrl": "/people/Stephen_1_BW_2.jpg",
+        "description": "I’m interested in exploring how we can use genomics in efforts to reduce the burden of bacterial pathogens causing pneumonia, meningitis and neonatal sepsis in infants in low-income settings."
+    },
+    {
+        "name": "Dr. Christine J. Boinett",
+        "role": "Product Manager and Principal Bioinformatician",
+        "imageUrl": "/people/Christine_1_BW.jpg",
+        "description": "I am involved in developing, managing and delivering bioinformatics training for our JUNO and GPS2 project partners."
+    },
+    {
+        "name": "Dr. Dorota Jamrozy",
+        "role": "Project Manager and Principal Bioinformatician",
+        "imageUrl": "/people/Dorota_1_BW.jpg",
+        "description": "I coordinate the JUNO project and study genomics and evolution of Group B *Streptococcus*."
+    },
+    {
+        "name": "Gareth Peat",
+        "role": "Principal Software Developer",
+        "imageUrl": "/people/Gareth_2_BW.jpg",
+        "description": "I am involved in developing the software and infrastructure for the JUNO project."
+    },
+    {
+        "name": "Uzma Basit Khan",
+        "role": "Senior Computational Biologist",
+        "imageUrl": "/people/Uzma_2_BW.jpg",
+        "description": "I study antibiotic resistance mechanisms, recombination, mobile genetic elements and transmission in *Streptococcus agalactiae* to comprehend bacterial adaptation and evolution."
+    }
+]
