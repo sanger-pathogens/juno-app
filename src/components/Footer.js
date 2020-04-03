@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Grid, Link, Typography, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import Funders from './Funders';
+
 import contacts from '../content/contacts';
 
 const useStyles = makeStyles(theme => ({
@@ -17,6 +19,7 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <Box className={classes.footer} mt={8}>
+      <Funders />
       <Box p={3} bgcolor="primary.main">
         <Grid container alignItems="center" justify="space-between" spacing={2}>
           <Grid item xs={12} md={4}>
