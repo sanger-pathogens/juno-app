@@ -1,0 +1,140 @@
+[
+    {
+        "affiliation": "University of the Witwatersrand",
+        "country": "South Africa",
+        "latitude": -26.13836,
+        "longitude": 28.03455
+    },
+    {
+        "affiliation": "Vaccine Research and Development, Pfizer",
+        "country": "United States",
+        "latitude": 41.07851,
+        "longitude": -74.01445
+    },
+    {
+        "affiliation": "Kempegowda Institute of Medical Sciences",
+        "country": "India",
+        "latitude": 12.96557,
+        "longitude": 77.60625
+    },
+    {
+        "affiliation": "St George’s, University of London",
+        "country": "United Kingdom",
+        "latitude": 51.4278,
+        "longitude": -0.17577
+    },
+    {
+        "affiliation": "Universidade Federal do Rio de Janeiro",
+        "country": "Brazil",
+        "latitude": -22.863711,
+        "longitude": -43.227739
+    },
+    {
+        "affiliation": "Child Health Research Foundation",
+        "country": "Bangladesh",
+        "latitude": 23.733949,
+        "longitude": 90.367599
+    },
+    {
+        "affiliation": "Universidad de Buenos Aires",
+        "country": "Argentina",
+        "latitude": -34.59986,
+        "longitude": -58.37305
+    },
+    {
+        "affiliation": "The Chinese University of Hong Kong",
+        "country": "China",
+        "latitude": 22.41987,
+        "longitude": 114.20615
+    },
+    {
+        "affiliation": "Gabrichevsky Epidemiology and Microbiology Research Institute",
+        "country": "Russia",
+        "latitude": 55.837486,
+        "longitude": 37.489237
+    },
+    {
+        "affiliation": "Universidad de la Sabana",
+        "country": "Colombia",
+        "latitude": 4.861403,
+        "longitude": -74.033078
+    },
+    {
+        "affiliation": "Suez Canal University",
+        "country": "Egypt",
+        "latitude": 30.620779,
+        "longitude": 32.270333
+    },
+    {
+        "affiliation": "Keio University School of Medicine",
+        "country": "Japan",
+        "latitude": 35.649145,
+        "longitude": 139.742864
+    },
+    {
+        "affiliation": "University of Peradeniya",
+        "country": "Sri Lanka",
+        "latitude": 7.258967,
+        "longitude": 80.597999
+    },
+    {
+        "affiliation": "Pontifícia Universidade Católica do Paraná",
+        "country": "Brazil",
+        "latitude": -25.45195,
+        "longitude": -49.252552
+    },
+    {
+        "affiliation": "Toros University",
+        "country": "Turkey",
+        "latitude": 36.790048,
+        "longitude": 34.593931
+    },
+    {
+        "affiliation": "Iaso Hospital, Athens",
+        "country": "Greece",
+        "latitude": 38.033964,
+        "longitude": 23.795419
+    },
+    {
+        "affiliation": "Universidade Estadual de Londrina",
+        "country": "Brazil",
+        "latitude": -23.324602,
+        "longitude": -51.201439
+    },
+    {
+        "affiliation": "National Reference Laboratories, Israel",
+        "country": "Israel",
+        "latitude": 31.790752,
+        "longitude": 35.201894
+    },
+    {
+        "affiliation": "University of North Carolina at Chapel Hill",
+        "country": "United States",
+        "latitude": 35.907405,
+        "longitude": -79.048176
+    },
+    {
+        "affiliation": "The University of Sydney",
+        "country": "Australia",
+        "latitude": -33.888426,
+        "longitude": 151.187389
+    },
+    {
+        "affiliation": "Centers for Disease Control and Prevention",
+        "country": "United States",
+        "latitude": 33.798639,
+        "longitude": -84.327058
+    },
+    {
+        "affiliation": "Public Health England",
+        "country": "United Kingdom",
+        "latitude": 51.594929,
+        "longitude": -0.254648
+    },
+    {
+        "country": "United Kingdom",
+        "affiliation": "Wellcome Sanger Institute",
+        "longitude": 0.1235817,
+        "latitude": 52.2034823
+      }
+]

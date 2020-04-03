@@ -1,29 +1,46 @@
 import React from 'react';
-import { Box, Grid, Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import {
+  AppBar,
+  Toolbar,
+  Grid,
+  Button,
+  Link,
+  useScrollTrigger,
+} from '@material-ui/core';
 
-const Header = () => (
-  <Box m={4} color="white">
-    <Grid container alignItems="center" justify="space-between" spacing={4}>
-      <Grid item>
-        <img src="JunoLogo.svg" height="57px" alt="Juno logo" />
-      </Grid>
-      <Grid item>
-        <Button color="inherit" to="/" component={Link}>
-          Home
-        </Button>
-        <Button color="inherit" to="/team" component={Link}>
-          Team
-        </Button>
-        <Button color="inherit" to="/locations" component={Link}>
-          Where we work
-        </Button>
-        <Button color="inherit" to="/partners" component={Link}>
-          Partners
-        </Button>
-      </Grid>
-    </Grid>
-  </Box>
-);
+const Header = ({ navigation }) => {
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window,
+  });
+  return (
+    <AppBar
+      position="fixed"
+      color={trigger ? 'inherit' : 'transparent'}
+      style={{ borderBottom: trigger ? '2px solid white' : 'none' }}
+      elevation={0}
+    >
+      <Toolbar variant="dense">
+        <Grid container alignItems="center" justify="space-between" spacing={4}>
+          <Grid item>
+            {trigger ? (
+              <Button color="inherit" href="/" component={Link}>
+                <img src="JunoLogo.svg" height="57px" alt="Juno logo" />
+              </Button>
+            ) : null}
+          </Grid>
+          <Grid item>
+            {navigation.map((item, i) => (
+              <Button key={i} color="inherit" href={item.url} component={Link}>
+                {item.label}
+              </Button>
+            ))}
+          </Grid>
+        </Grid>
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 export default Header;
