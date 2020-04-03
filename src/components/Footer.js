@@ -1,43 +1,93 @@
 import React from 'react';
-import { Box, Grid, IconButton, Link } from '@material-ui/core';
-import AlternateEmailOutlinedIcon from '@material-ui/icons/AlternateEmailOutlined';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { Box, Grid, Link, Typography, Hidden } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Footer = () => (
-  <Box m={4} color="white">
-    <Grid container alignItems="center" justify="space-between" spacing={4}>
-      <Grid item>
-        <img src="SangerLogo.9423243b.png" width="166" alt="Sanger logo" />
-      </Grid>
-      <Grid item>
-        <IconButton
-          color="inherit"
-          target="_blank"
-          href="https://www.pneumogen.net/gps/"
-          component={Link}
-        >
-          <AlternateEmailOutlinedIcon />
-        </IconButton>
-        <IconButton
-          color="inherit"
-          target="_blank"
-          href="https://www.pneumogen.net/gps/"
-          component={Link}
-        >
-          <LinkedInIcon />
-        </IconButton>
-        <IconButton
-          color="inherit"
-          target="_blank"
-          href="https://www.pneumogen.net/gps/"
-          component={Link}
-        >
-          <TwitterIcon />
-        </IconButton>
-      </Grid>
-    </Grid>
-  </Box>
-);
+import contacts from '../content/contacts';
+
+const useStyles = makeStyles(theme => ({
+  footer: {
+    borderTop: `2px solid ${theme.palette.primary.main}`,
+  },
+  footerLink: {
+    color: 'white',
+  },
+}));
+
+const Footer = () => {
+  const classes = useStyles();
+  return (
+    <Box className={classes.footer} mt={8}>
+      <Box p={3} bgcolor="primary.main">
+        <Grid container alignItems="center" justify="space-between" spacing={2}>
+          <Grid item xs={12} md={4}>
+            <Link
+              href="https://www.sanger.ac.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/SangerLogo.9423243b.png"
+                width="130"
+                alt="Sanger logo"
+              />
+            </Link>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="subtitle2">
+              <i>Contacts</i>
+            </Typography>
+            <Typography variant="body1">
+              {contacts.map((contact, i) => (
+                <React.Fragment key={i}>
+                  <Link
+                    className={classes.footerLink}
+                    href={contact.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {contact.label}
+                  </Link>
+                  {i < contacts.length - 1 ? ' | ' : null}
+                </React.Fragment>
+              ))}
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Hidden mdUp>
+              <Typography variant="subtitle2">
+                <i>Version</i>
+              </Typography>
+              <Typography variant="body1">
+                <Link
+                  className={classes.footerLink}
+                  href={`https://github.com/sanger-pathogens/bentley-app/commit/${process.env.REACT_APP_GIT_REVISION}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {process.env.REACT_APP_GIT_REVISION}
+                </Link>
+              </Typography>
+            </Hidden>
+            <Hidden smDown>
+              <Typography variant="subtitle2" align="right">
+                <i>Version</i>
+              </Typography>
+              <Typography variant="body1" align="right">
+                <Link
+                  className={classes.footerLink}
+                  href={`https://github.com/sanger-pathogens/juno-app/commit/${process.env.REACT_APP_GIT_REVISION}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {process.env.REACT_APP_GIT_REVISION}
+                </Link>
+              </Typography>
+            </Hidden>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
+  );
+};
 
 export default Footer;
