@@ -9,7 +9,7 @@ import Section from './Section';
 import Splash from './Splash';
 import About from './About';
 import WorldMap from './WorldMap2';
-import Team from './Team';
+import Team from './TeamGrid';
 
 // Offset all anchors by -60 to account for a fixed header
 // and scroll more quickly than the default 400ms
