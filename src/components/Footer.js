@@ -20,10 +20,8 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <Box className={classes.footer} mt={8}>
+      <UsefulLinks />
       <Funders />
-      <Box className={classes.footer}>
-        <UsefulLinks />
-      </Box>
       <Box p={3} bgcolor="primary.main">
         <Grid container alignItems="center" justify="space-between" spacing={2}>
           <Grid item xs={12} md={4}>
