@@ -1,7 +1,8 @@
-export const primary = '#00bcd4';
-export const secondary = '#651fff';
-export const highlight = '#f5f9a7';
-export const background = '#424242';
+export const primary = '#6868BE';
+export const secondary = '#8BABE4';
+export const highlight = '#FBECD2';
+// export const background = '#424242';
+export const background = '#8BABE4';
 
 export default {
   typography: {
