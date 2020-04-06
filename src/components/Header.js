@@ -17,7 +17,7 @@ const Header = ({ navigation }) => {
   return (
     <AppBar
       position="fixed"
-      color={trigger ? 'inherit' : 'transparent'}
+      color={trigger ? 'primary' : 'transparent'}
       style={{ borderBottom: trigger ? '2px solid white' : 'none' }}
       elevation={0}
     >
