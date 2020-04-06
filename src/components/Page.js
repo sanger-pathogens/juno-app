@@ -2,15 +2,17 @@ import React from 'react';
 import { Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   page: {
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     margin: 0,
     width: '100%',
+    background: theme.palette.primary.dark,
+    // background: `linear-gradient(90deg, ${primary} 0%, ${secondary} 100%)`,
   },
-});
+}));
 
 const Page = ({ header, footer, children }) => {
   const classes = useStyles();
