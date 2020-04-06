@@ -5,7 +5,6 @@ import Markdown from './Markdown';
 
 const About = () => (
   <>
-    <Markdown md={raw('../content/intro.md')} />
     <Markdown md={raw('../content/what-is-gbs.md')} />
     <Markdown md={raw('../content/our-aim.md')} />
   </>
