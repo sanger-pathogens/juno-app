@@ -6,9 +6,10 @@ import Page from './Page';
 import Header from './Header';
 import Footer from './Footer';
 import Section from './Section';
-// import SplashImage from './SplashImage';
+import Splash from './Splash';
 import About from './About';
 import WorldMap from './WorldMap2';
+import Team from './Team';
 
 // Offset all anchors by -60 to account for a fixed header
 // and scroll more quickly than the default 400ms
@@ -25,7 +26,7 @@ const sections = [
     label: 'Team',
     title: 'Team',
     url: 'team',
-    ContentComponent: () => <div>Team content</div>,
+    ContentComponent: Team,
   },
   {
     label: 'Partners',
@@ -47,7 +48,7 @@ const PageHome = () => (
     }
     footer={<Footer />}
   >
-    {/* <SplashImage /> */}
+    <Splash />
     <Box>
       {sections.map((section, i) => (
         <Section key={i} anchorId={section.url} {...section} />
