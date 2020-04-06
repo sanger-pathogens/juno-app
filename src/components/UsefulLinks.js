@@ -1,11 +1,21 @@
 import React from 'react';
 import { Box, Grid, Link, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 import usefulLinks from '../content/useful-links';
 
+const useStyles = makeStyles(theme => ({
+  funderLink: {
+    color: 'white',
+    maxWidth: '250px',
+    display: 'inline-flex',
+  },
+}));
+
 const UsefulLinks = () => {
+  const classes = useStyles();
   return (
-    <Box bgcolor="black" color="text.primary" textAlign="center" p={2}>
+    <Box bgcolor="primary.light" color="text.primary" textAlign="center" p={2}>
       <Typography variant="h6" gutterBottom>
         Useful Links
       </Typography>
@@ -15,7 +25,7 @@ const UsefulLinks = () => {
             <Box p={2}>
               <Typography variant="body1">
                 <Link
-                  style={{ maxWidth: '250px', display: 'inline-flex' }}
+                  className={classes.funderLink}
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
