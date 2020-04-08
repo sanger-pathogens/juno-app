@@ -1,9 +1,12 @@
 import React from 'react';
+import { useTheme } from '@material-ui/core/styles';
 import { geoOrthographic, geoPath } from 'd3';
 import { feature } from 'topojson';
 import world from 'world-atlas/countries-110m.json';
 
 const IconWorld = ({ R = 100 }) => {
+  const theme = useTheme();
+
   const outline = { type: 'Sphere' };
   const features = feature(world, world.objects.land).features;
   const projection = geoOrthographic()
@@ -14,6 +17,9 @@ const IconWorld = ({ R = 100 }) => {
 
   return (
     <svg width={2 * R} height={2 * R}>
+      <g transform={`translate(${R},${R})`} fill={theme.palette.primary.dark}>
+        <circle cx={0} cy={0} r={R - 1} />
+      </g>
       <g>
         {features.map((feature, i) => (
           <path stroke="none" fill="white" key={i} d={path(feature)} />

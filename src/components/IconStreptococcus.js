@@ -23,6 +23,9 @@ const IconStreptococcus = ({ R = 100 }) => {
           <circle cx={0} cy={0} r={R - 1} />
         </clipPath>
       </defs>
+      <g transform={`translate(${R},${R})`} fill={theme.palette.primary.dark}>
+        <circle cx={0} cy={0} r={R - 1} />
+      </g>
       <g
         transform={`translate(${R},${R})`}
         stroke={theme.palette.primary.dark}

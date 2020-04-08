@@ -1,5 +1,6 @@
 import React from 'react';
-import { hierarchy, cluster, ascending, max, extent, arc } from 'd3';
+import { useTheme } from '@material-ui/core/styles';
+import { hierarchy, cluster, ascending, max } from 'd3';
 import raw from 'raw.macro';
 
 // see https://observablehq.com/@mbostock/tree-of-life
@@ -90,6 +91,8 @@ function maxLength(d) {
 
 const treeOfLifeData = newickParser(newickTreeOfLifeData);
 const IconPhylogeny = ({ R = 100 }) => {
+  const theme = useTheme();
+
   const innerRadius = R;
   const root = hierarchy(
     // treeOfLifeData.branchset[0].branchset[0].branchset[0],
@@ -118,6 +121,9 @@ const IconPhylogeny = ({ R = 100 }) => {
           <circle cx={0} cy={0} r={R - 1} />
         </clipPath>
       </defs>
+      <g transform={`translate(${R},${R})`} fill={theme.palette.primary.dark}>
+        <circle cx={0} cy={0} r={R - 1} />
+      </g>
       <g
         transform={`translate(${R},${R})`}
         stroke="white"
