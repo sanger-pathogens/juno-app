@@ -1,4 +1,4 @@
-### What is Streptococcus agalactiae?
+#### What is *Streptococcus agalactiae*?
 
 *S. agalactiae* or group B streptococcus (GBS) is a commensal bacterium and an opportunistic pathogen. GBS can be carried in the intestinal or lower genital tracts of healthy women. There is a risk that GBS can be transmitted to a baby during childbirth and may cause life-threatening infections in the newborn such as sepsis, pneumoniae and meningitis.The mortality rates of GBS infected infants are highest in low- and middle-income countries (LMICs), where disease prevention strategies are less often implemented or have low coverage.
 
