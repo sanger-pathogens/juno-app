@@ -18,7 +18,7 @@ configureAnchors({ offset: -60, scrollDuration: 200 });
 const sections = [
   {
     label: 'About',
-    title: 'About',
+    showTitle: false,
     url: 'about',
     ContentComponent: About,
   },

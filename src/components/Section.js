@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Section = ({ anchorId, title, ContentComponent }) => {
+const Section = ({ anchorId, showTitle = true, title, ContentComponent }) => {
   const classes = useStyles();
   return (
     <Grid
@@ -25,9 +25,11 @@ const Section = ({ anchorId, title, ContentComponent }) => {
         <Box pt={8}>
           <ScrollableAnchor id={anchorId}>
             <Box>
-              <Typography variant="h2" gutterBottom>
-                {title}
-              </Typography>
+              {showTitle ? (
+                <Typography variant="h2" gutterBottom>
+                  {title}
+                </Typography>
+              ) : null}
               <ContentComponent />
             </Box>
           </ScrollableAnchor>
