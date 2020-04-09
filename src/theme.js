@@ -1,6 +1,8 @@
 export const primary = '#6868BE';
-export const secondary = '#B3E9C7';
-export const tertiary = '#E63946';
+// export const secondary = '#B3E9C7';
+// export const secondary = '#E63946';
+export const secondary = '#DB5461';
+// export const tertiary = '#E63946';
 export const highlight = '#FBECD2';
 // export const background = '#424242';
 export const background = '#8BABE4';
@@ -28,7 +30,7 @@ export default {
     type: 'dark',
     primary: { main: primary },
     secondary: { main: secondary },
-    tertiary: { main: tertiary },
+    // tertiary: { main: tertiary },
   },
   status: {
     danger: 'orange',

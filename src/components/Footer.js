@@ -9,7 +9,8 @@ import contacts from '../content/contacts';
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    borderTop: `2px solid ${theme.palette.primary.main}`,
+    // borderTop: `2px solid ${theme.palette.primary.main}`,
+    borderTop: 'none',
   },
   footerLink: {
     color: 'white',

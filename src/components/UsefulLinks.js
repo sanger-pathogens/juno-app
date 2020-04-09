@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
 const UsefulLinks = () => {
   const classes = useStyles();
   return (
-    <Box bgcolor="primary.light" color="text.primary" textAlign="center" p={2}>
+    <Box bgcolor="secondary.main" color="white" textAlign="center" p={2}>
       <Typography variant="h6" gutterBottom>
         Useful Links
       </Typography>
