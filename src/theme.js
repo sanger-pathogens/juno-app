@@ -51,11 +51,10 @@ export default {
     MuiTooltip: {
       tooltip: {
         minWidth: '200px',
-        color: background,
-        backgroundColor: 'white',
+        backgroundColor: secondary,
       },
       arrow: {
-        color: 'white',
+        color: secondary,
       },
     },
     MuiTypography: {

@@ -1,19 +1,29 @@
 import React, { useRef } from 'react';
 import { useTheme } from '@material-ui/core/styles';
-import { Box, Grid, Tooltip, Typography } from '@material-ui/core';
-import { CheckCircleRounded, CancelRounded } from '@material-ui/icons';
+import { Tooltip, Typography } from '@material-ui/core';
 import useMeasure from 'use-measure';
-import { geoNaturalEarth1, geoPath, geoGraticule10 } from 'd3';
+import { geoNaturalEarth1, geoPath, min } from 'd3';
 import { feature } from 'topojson';
 import world from 'world-atlas/countries-110m.json';
 
 import affiliates from '../content/juno-affiliates';
+import { primary } from '../theme';
 
 const tooltipContentRenderer = d => (
   <Typography variant="subtitle2" align="center">
-    <strong>{d.affiliation}</strong>
-    <br />
-    {d.country}
+    {d.items.map((item, i) => (
+      <React.Fragment key={i}>
+        <strong>{item.affiliation}</strong>
+        <br />
+        {item.country}
+        {i < d.items.length - 1 ? (
+          <React.Fragment>
+            <br />
+            <hr style={{ borderTop: primary }} />
+          </React.Fragment>
+        ) : null}
+      </React.Fragment>
+    ))}
   </Typography>
 );
 
@@ -32,7 +42,7 @@ const WorldMap = () => {
   const { width, height } = size;
 
   // data to draw
-  const graticule = geoGraticule10();
+  // const graticule = geoGraticule10();
   const outline = { type: 'Sphere' };
   const features = feature(world, world.objects.countries).features;
 
@@ -47,6 +57,37 @@ const WorldMap = () => {
     const [cx, cy] = projection([point.longitude, point.latitude]);
     return { ...point, cx, cy };
   });
+
+  const r = 6;
+  const threshold = 2 * r;
+  const euclidean = (p1, p2) =>
+    Math.sqrt((p1.cx - p2.cx) ** 2 + (p1.cy - p2.cy) ** 2);
+
+  const mergedPointsWithScreenCoordinates = pointsWithScreenCoordinates
+    .reduce((acc, point) => {
+      // acc is array of arrays of points
+      if (acc.length > 0) {
+        const minDistancesPerMergedPointArray = acc.map(pointArray =>
+          min(pointArray.map(other => euclidean(point, other)))
+        );
+        const minDistance = min(minDistancesPerMergedPointArray);
+
+        if (minDistance < threshold) {
+          // merge points if they are close on screen
+          const minDistanceIndex = minDistancesPerMergedPointArray.indexOf(
+            minDistance
+          );
+          acc[minDistanceIndex].push(point);
+        } else {
+          acc.push([point]);
+        }
+      } else {
+        acc.push([point]);
+      }
+
+      return acc;
+    }, [])
+    .map(d => ({ cx: d[0].cx, cy: d[0].cy, items: d }));
 
   return (
     <div ref={nodeRef} style={{ width: '100%', height: 600 }}>
@@ -73,9 +114,9 @@ const WorldMap = () => {
           stroke={theme.palette.primary.dark}
           fill={theme.palette.secondary.main}
         >
-          {pointsWithScreenCoordinates.map((point, j) => (
+          {mergedPointsWithScreenCoordinates.map((point, j) => (
             <Tooltip key={j} title={tooltipContentRenderer(point)} arrow>
-              <Circle key={j} {...{ cx: point.cx, cy: point.cy, r: 6 }} />
+              <Circle key={j} {...{ cx: point.cx, cy: point.cy, r: 4 }} />
             </Tooltip>
           ))}
         </g>
