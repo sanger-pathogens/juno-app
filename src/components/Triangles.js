@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { line } from 'd3';
 import useMeasure from 'use-measure';
 
@@ -27,13 +27,13 @@ function trianglePath(d) {
   return line()(points);
 }
 
-function proximity(d, x, y, width) {
+export function proximity(d, x, y, width) {
   var dist =
     1 - Math.sqrt(Math.pow(d.cx - x, 2) + Math.pow(d.cy - y, 2)) / width;
   return Math.pow(dist, 6);
 }
 
-function inverseProximity(d, x, y, width) {
+export function inverseProximity(d, x, y, width) {
   var dist = Math.sqrt(Math.pow(d.cx - x, 2) + Math.pow(d.cy - y, 2)) / width;
   return Math.pow(dist, 2);
 }
@@ -83,17 +83,18 @@ function createTriangleData(width, height, trianglesAcross, area) {
 const useStyles = makeStyles(theme => ({
   container: {
     width: '100%',
-    height: '40vh',
     position: 'absolute',
-    backgroundColor: theme.palette.primary.main,
-  },
-  svg: {
-    fill: theme.palette.primary.dark,
   },
 }));
 
-const Triangles = () => {
+const Triangles = ({
+  backgroundColour = theme => theme.palette.primary.main,
+  triangleColour = theme => theme.palette.primary.dark,
+  containerHeight = () => '40vh',
+  triangleSize = inverseProximity,
+}) => {
   const classes = useStyles();
+  const theme = useTheme();
 
   // update if container dimensions change
   const nodeRef = useRef();
@@ -103,15 +104,22 @@ const Triangles = () => {
   const trianglesAcross = 40;
   const triangles =
     width > 0
-      ? createTriangleData(width, height, trianglesAcross, inverseProximity)
+      ? createTriangleData(width, height, trianglesAcross, triangleSize)
       : [];
 
   return (
-    <div ref={nodeRef} className={classes.container}>
+    <div
+      ref={nodeRef}
+      className={classes.container}
+      style={{
+        height: containerHeight(theme),
+        backgroundColor: backgroundColour(theme),
+      }}
+    >
       <svg
         width={width}
         height={height}
-        className={classes.svg}
+        fill={triangleColour(theme)}
         viewBox={`0 0 ${width ? width : 0} ${height ? height : 0}`}
       >
         <g>
