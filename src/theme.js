@@ -1,7 +1,7 @@
 export const primary = '#6868BE';
 // export const secondary = '#B3E9C7';
 // export const secondary = '#E63946';
-export const secondary = '#DB5461';
+export const secondary = '#00C895';
 // export const tertiary = '#E63946';
 export const highlight = '#FBECD2';
 // export const background = '#424242';
