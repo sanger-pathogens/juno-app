@@ -21,7 +21,7 @@ const UsefulLinks = () => {
       </Typography>
       <Grid container>
         {usefulLinks.map((item, i) => (
-          <Grid item key={i} xs={12} sm={6}>
+          <Grid item key={i} xs={12} md={4}>
             <Box p={2}>
               <Typography variant="body1">
                 <Link
