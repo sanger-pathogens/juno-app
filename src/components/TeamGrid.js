@@ -17,7 +17,12 @@ const TeamDescriptionRenderer = ({ md }) => (
 
 const Person = ({ name, role, imageUrl, description }) => (
   <Box>
-    <img src={imageUrl} alt={`${name} - ${role}`} width="100%" />
+    <img
+      style={{ border: '2px solid white', margin: '2px' }}
+      src={imageUrl}
+      alt={`${name} - ${role}`}
+      width="100%"
+    />
     <Typography variant="h6">{name}</Typography>
     <Typography variant="subtitle1">
       <i>{role}</i>
