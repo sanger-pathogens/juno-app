@@ -8,7 +8,7 @@ import Footer from './Footer';
 import Section from './Section';
 import Splash from './Splash';
 import About from './About';
-import WorldMap from './WorldMap2';
+import WorldMap from './WorldMap';
 import Team from './TeamGrid';
 
 // Offset all anchors by -60 to account for a fixed header
