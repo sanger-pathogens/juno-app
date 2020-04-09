@@ -63,5 +63,17 @@ export default {
         marginBottom: 16,
       },
     },
+    MuiList: {
+      padding: {
+        paddingTop: 0,
+        paddingBottom: 0,
+      },
+    },
+    MuiMenu: {
+      list: {
+        padding: 'none',
+        border: '1px solid white',
+      },
+    },
   },
 };
