@@ -104,7 +104,12 @@ const Header = ({ navigation }) => {
       elevation={0}
     >
       <Toolbar variant="dense">
-        <Grid container alignItems="center" justify="space-between" spacing={4}>
+        <Grid
+          container
+          alignItems="center"
+          justify="space-between"
+          style={{ minHeight: '69px' }}
+        >
           <Grid item>
             {trigger ? (
               <Button color="inherit" href="/" component={Link}>
