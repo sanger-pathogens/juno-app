@@ -7,15 +7,14 @@ import UsefulLinks from './UsefulLinks';
 
 import contacts from '../content/contacts';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   footer: {
-    // borderTop: `2px solid ${theme.palette.primary.main}`,
-    borderTop: 'none',
+    borderTop: '2px solid white',
   },
   footerLink: {
     color: 'white',
   },
-}));
+});
 
 const Footer = () => {
   const classes = useStyles();
