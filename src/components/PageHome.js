@@ -30,7 +30,7 @@ const sections = [
   },
   {
     label: 'Partners',
-    title: 'Partners',
+    title: 'Sampling and Partner Institutions',
     url: 'partners',
     ContentComponent: WorldMap,
   },
