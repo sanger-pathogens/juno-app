@@ -1,11 +1,9 @@
 import React from 'react';
-import { Grid, Box, Typography, Hidden } from '@material-ui/core';
+import { Grid, Box, Typography } from '@material-ui/core';
 import ReactMarkdown from 'react-markdown';
 import raw from 'raw.macro';
 
-import IconWorld from './IconWorld';
-import IconStreptococcus from './IconStreptococcus';
-import IconPhylogeny from './IconPhylogeny';
+import Icons from './Icons';
 
 const renderers = {
   paragraph: ({ children }) => <Typography gutterBottom>{children}</Typography>,
@@ -21,21 +19,9 @@ const Intro = () => (
         <MarkdownIntro md={raw('../content/intro.md')} />
       </Box>
     </Grid>
-    <Hidden smDown>
-      <Grid item xs={12}>
-        <Box align="center" pt={2} pb={2}>
-          <Box p={1} display="inline">
-            <IconWorld />
-          </Box>
-          <Box p={1} display="inline">
-            <IconStreptococcus />
-          </Box>
-          <Box p={1} display="inline">
-            <IconPhylogeny />
-          </Box>
-        </Box>
-      </Grid>
-    </Hidden>
+    <Grid item xs={12}>
+      <Icons />
+    </Grid>
   </Grid>
 );
 
