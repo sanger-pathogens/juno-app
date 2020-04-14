@@ -129,16 +129,13 @@ const WorldMap = () => {
               fill={
                 isolateCountries.indexOf(feature.properties.name) >= 0
                   ? theme.palette.secondary.light
-                  : 'white'
+                  : theme.palette.primary.main
               }
               d={path(feature)}
             />
           ))}
         </g>
-        <g
-          stroke={theme.palette.primary.dark}
-          fill={theme.palette.tertiary.main}
-        >
+        <g stroke={theme.palette.primary.dark} fill="white">
           {mergedPointsWithScreenCoordinates.map((point, j) => (
             <Tooltip key={j} title={tooltipAffiliateRenderer(point)} arrow>
               <Circle key={j} {...{ cx: point.cx, cy: point.cy, r: 4 }} />
