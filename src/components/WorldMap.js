@@ -10,7 +10,7 @@ import affiliates from '../content/juno-affiliates';
 import isolateCountries from '../content/isolate-countries';
 import { primary } from '../theme';
 
-const tooltipContentRenderer = d => (
+const tooltipAffiliateRenderer = d => (
   <Typography variant="subtitle2" align="center">
     {d.items.map((item, i) => (
       <React.Fragment key={i}>
@@ -28,11 +28,23 @@ const tooltipContentRenderer = d => (
   </Typography>
 );
 
+// const tooltipCountryRenderer = d => (
+//   <Typography variant="subtitle2" align="center">
+//     {d.properties.name}
+//   </Typography>
+// );
+
 const Circle = React.forwardRef((props, ref) => (
   <circle {...props} ref={ref}>
     Bin
   </circle>
 ));
+
+// const Path = React.forwardRef((props, ref) => (
+//   <path {...props} ref={ref}>
+//     Bin
+//   </path>
+// ));
 
 const WorldMap = () => {
   const theme = useTheme();
@@ -99,18 +111,27 @@ const WorldMap = () => {
         stroke="#666"
         viewBox={`0 0 ${width ? width : 0} ${height ? height : 0}`}
       >
-        <g>
+        <g strokeWidth="0.5" stroke={theme.palette.primary.dark}>
           {features.map((feature, i) => (
+            // <Tooltip key={i} title={tooltipCountryRenderer(feature)} arrow>
+            //   <path
+            //     fill={
+            //       isolateCountries.indexOf(feature.properties.name) >= 0
+            //         ? theme.palette.secondary.light
+            //         : 'white'
+            //     }
+            //     d={path(feature)}
+            //   />
+            // </Tooltip>
+
             <path
-              stroke={theme.palette.primary.dark}
+              key={i}
               fill={
                 isolateCountries.indexOf(feature.properties.name) >= 0
                   ? theme.palette.secondary.light
                   : 'white'
               }
-              key={i}
               d={path(feature)}
-              strokeWidth="0.5"
             />
           ))}
         </g>
@@ -119,7 +140,7 @@ const WorldMap = () => {
           fill={theme.palette.tertiary.main}
         >
           {mergedPointsWithScreenCoordinates.map((point, j) => (
-            <Tooltip key={j} title={tooltipContentRenderer(point)} arrow>
+            <Tooltip key={j} title={tooltipAffiliateRenderer(point)} arrow>
               <Circle key={j} {...{ cx: point.cx, cy: point.cy, r: 4 }} />
             </Tooltip>
           ))}
