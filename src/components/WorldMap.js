@@ -7,6 +7,7 @@ import { feature } from 'topojson';
 import world from 'world-atlas/countries-110m.json';
 
 import affiliates from '../content/juno-affiliates';
+import isolateCountries from '../content/isolate-countries';
 import { primary } from '../theme';
 
 const tooltipContentRenderer = d => (
@@ -42,7 +43,6 @@ const WorldMap = () => {
   const { width, height } = size;
 
   // data to draw
-  // const graticule = geoGraticule10();
   const outline = { type: 'Sphere' };
   const features = feature(world, world.objects.countries).features;
 
@@ -103,7 +103,11 @@ const WorldMap = () => {
           {features.map((feature, i) => (
             <path
               stroke={theme.palette.primary.dark}
-              fill="white"
+              fill={
+                isolateCountries.indexOf(feature.properties.name) >= 0
+                  ? theme.palette.secondary.light
+                  : 'white'
+              }
               key={i}
               d={path(feature)}
               strokeWidth="0.5"
@@ -112,7 +116,7 @@ const WorldMap = () => {
         </g>
         <g
           stroke={theme.palette.primary.dark}
-          fill={theme.palette.secondary.main}
+          fill={theme.palette.tertiary.main}
         >
           {mergedPointsWithScreenCoordinates.map((point, j) => (
             <Tooltip key={j} title={tooltipContentRenderer(point)} arrow>

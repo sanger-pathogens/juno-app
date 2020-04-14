@@ -2,7 +2,7 @@ export const primary = '#6868BE';
 // export const secondary = '#B3E9C7';
 // export const secondary = '#E63946';
 export const secondary = '#00C895';
-// export const tertiary = '#E63946';
+export const tertiary = '#E63946';
 export const highlight = '#FBECD2';
 // export const background = '#424242';
 export const background = '#8BABE4';
@@ -30,7 +30,7 @@ export default {
     type: 'dark',
     primary: { main: primary },
     secondary: { main: secondary },
-    // tertiary: { main: tertiary },
+    tertiary: { main: tertiary },
   },
   status: {
     danger: 'orange',
@@ -52,6 +52,7 @@ export default {
       tooltip: {
         minWidth: '200px',
         backgroundColor: secondary,
+        border: `1px solid white`,
       },
       arrow: {
         color: secondary,
