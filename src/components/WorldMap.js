@@ -52,7 +52,8 @@ const WorldMap = () => {
   // update if container dimensions change
   const nodeRef = useRef();
   const size = useMeasure(nodeRef);
-  const { width, height } = size;
+  const { width } = size;
+  const height = width * 0.6; // fixed aspect ratio for projection
 
   // data to draw
   const outline = { type: 'Sphere' };
@@ -102,11 +103,10 @@ const WorldMap = () => {
     .map(d => ({ cx: d[0].cx, cy: d[0].cy, items: d }));
 
   return (
-    <div ref={nodeRef} style={{ width: '100%', height: 600 }}>
+    <div ref={nodeRef} style={{ width: '100%', height: '60%' }}>
       <svg
         width={width}
         height={height}
-        style={{ position: 'absolute' }}
         fill="none"
         stroke="#666"
         viewBox={`0 0 ${width ? width : 0} ${height ? height : 0}`}
