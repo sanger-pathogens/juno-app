@@ -114,12 +114,6 @@
         "longitude": -79.048176
     },
     {
-        "affiliation": "The University of Sydney",
-        "country": "Australia",
-        "latitude": -33.888426,
-        "longitude": 151.187389
-    },
-    {
         "affiliation": "Centers for Disease Control and Prevention",
         "country": "United States",
         "latitude": 33.798639,
@@ -136,5 +130,89 @@
         "affiliation": "Wellcome Sanger Institute",
         "longitude": 0.1235817,
         "latitude": 52.2034823
-      }
+    },
+    {
+        "latitude": 29.71055,
+        "longitude": -95.395798,
+        "affiliation": "Baylor College of Medicine",
+        "country": "United States"
+    },
+    {
+        "latitude": 12.92879,
+        "longitude": 79.14351,
+        "affiliation": "Christian Medical College Vellore",
+        "country": "India"
+    },
+    {
+        "latitude": 48.425209,
+        "longitude": 9.96286,
+        "affiliation": "Ulm University",
+        "country": "Germany"
+    },
+    {
+        "latitude": 51.055489,
+        "longitude": 13.77813,
+        "affiliation": "University Hospital Carl Gustav Carus Dresden",
+        "country": "Germany"
+    },
+    {
+        "latitude": 50.573971,
+        "longitude": 5.56981,
+        "affiliation": "Centre Hospitalier Universitaire de Li√®ge",
+        "country": "Belgium"
+    },
+    {
+        "latitude": 55.871746,
+        "longitude": -4.288345,
+        "affiliation": "University of Glasgow",
+        "country": "United Kingdom"
+    },
+    {
+        "latitude": 52.079764,
+        "longitude": 0.185391,
+        "affiliation": "Centre for Genomic Pathogen Surveillance",
+        "country": "United Kingdom"
+    },
+    {
+        "latitude": 52.205118,
+        "longitude": 0.116208,
+        "affiliation": "University of Cambridge",
+        "country": "United Kingdom"
+    },
+    {
+        "latitude": -33.888426,
+        "longitude": 151.187389,
+        "affiliation": "The University of Sydney",
+        "country": "Australia"
+    },
+    {
+        "latitude": 6.334986,
+        "longitude": 5.60512,
+        "affiliation": "University of Benin",
+        "country": "Nigeria"
+    },
+    {
+        "latitude": -22.567233,
+        "longitude": 17.077767,
+        "affiliation": "Namibia University of Science and Technology",
+        "country": "Namibia"
+    },
+    {
+        "latitude": 12.583717,
+        "longitude": 37.442651,
+        "affiliation": "University of Gondar",
+        "country": "Ethiopia"
+    },
+    {
+        "latitude": 11.963657,
+        "longitude": 8.550453,
+        "affiliation": "Aminu Kano Teaching Hospital",
+        "country": "Nigeria"
+    },
+    {
+        "latitude": 52.294991,
+        "longitude": 4.95791,
+        "affiliation": "Amsterdam Medical Centre",
+        "country": "Netherlands"
+    }
 ]
