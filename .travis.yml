@@ -1,8 +1,0 @@
-language: node_js
-os: linux
-dist: xenial
-services:
-    - docker
-script:
-    - bash docker_push.sh
-if: tag IS present
