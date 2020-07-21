@@ -45,6 +45,7 @@ const PageHome = () => (
             label,
             url: `#${url}`,
           })),
+          { label: 'News', url: '#twitterFeed' },
           { label: 'Funders', url: '#funders' },
         ]}
       />

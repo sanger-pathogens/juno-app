@@ -1,11 +1,14 @@
 import React from 'react';
-import { Box, Grid, Link, Typography, Hidden } from '@material-ui/core';
+import { Box, Grid, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import FooterItem from './FooterItem';
+import TwitterFeed from './TwitterFeed';
 import Funders from './Funders';
 import UsefulLinks from './UsefulLinks';
 
 import contacts from '../content/contacts';
+import sites from '../content/sites';
 
 const useStyles = makeStyles({
   footer: {
@@ -20,11 +23,46 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <Box className={classes.footer} mt={8}>
+      <TwitterFeed />
       <UsefulLinks />
       <Funders />
       <Box p={3} bgcolor="primary.main">
         <Grid container alignItems="center" justify="space-between" spacing={2}>
-          <Grid item xs={12} md={4}>
+          <FooterItem heading="Sites">
+            {sites.map((site, i) => (
+              <React.Fragment key={i}>
+                <Link
+                  className={classes.footerLink}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {site.label}
+                </Link>
+                {i < sites.length - 1 ? ' | ' : null}
+              </React.Fragment>
+            ))}
+          </FooterItem>
+          <FooterItem heading="Contacts" right>
+            {contacts.map((contact, i) => (
+              <React.Fragment key={i}>
+                <Link
+                  className={classes.footerLink}
+                  href={contact.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {contact.label}
+                </Link>
+                {i < contacts.length - 1 ? ' | ' : null}
+              </React.Fragment>
+            ))}
+          </FooterItem>
+        </Grid>
+      </Box>
+      <Box p={3} bgcolor="primary.main" borderTop="2px solid white">
+        <Grid container alignItems="center" justify="space-between" spacing={2}>
+          <Grid item xs={12} sm={6}>
             <Link
               href="https://www.sanger.ac.uk/"
               target="_blank"
@@ -37,58 +75,16 @@ const Footer = () => {
               />
             </Link>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Typography variant="subtitle2">
-              <i>Contacts</i>
-            </Typography>
-            <Typography variant="body1">
-              {contacts.map((contact, i) => (
-                <React.Fragment key={i}>
-                  <Link
-                    className={classes.footerLink}
-                    href={contact.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {contact.label}
-                  </Link>
-                  {i < contacts.length - 1 ? ' | ' : null}
-                </React.Fragment>
-              ))}
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Hidden mdUp>
-              <Typography variant="subtitle2">
-                <i>Version</i>
-              </Typography>
-              <Typography variant="body1">
-                <Link
-                  className={classes.footerLink}
-                  href={`https://github.com/sanger-pathogens/bentley-app/commit/${process.env.REACT_APP_GIT_REVISION}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {process.env.REACT_APP_GIT_REVISION}
-                </Link>
-              </Typography>
-            </Hidden>
-            <Hidden smDown>
-              <Typography variant="subtitle2" align="right">
-                <i>Version</i>
-              </Typography>
-              <Typography variant="body1" align="right">
-                <Link
-                  className={classes.footerLink}
-                  href={`https://github.com/sanger-pathogens/juno-app/commit/${process.env.REACT_APP_GIT_REVISION}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {process.env.REACT_APP_GIT_REVISION}
-                </Link>
-              </Typography>
-            </Hidden>
-          </Grid>
+          <FooterItem heading="Version" right>
+            <Link
+              className={classes.footerLink}
+              href={`https://github.com/sanger-pathogens/juno-app/commit/${process.env.REACT_APP_GIT_REVISION}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {process.env.REACT_APP_GIT_REVISION}
+            </Link>
+          </FooterItem>
         </Grid>
       </Box>
     </Box>
