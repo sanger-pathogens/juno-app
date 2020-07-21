@@ -10,7 +10,14 @@ const renderers = {
     </Typography>
   ),
   image: props => <img {...props} width="250px" />,
-  link: props => <Link {...props} target="_blank" rel="noopener noreferrer" />,
+  link: props => (
+    <Link
+      {...props}
+      target="_blank"
+      rel="noopener noreferrer"
+      color="secondary"
+    />
+  ),
 };
 
 const Markdown = ({ md }) => (
