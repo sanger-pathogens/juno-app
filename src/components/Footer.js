@@ -3,6 +3,7 @@ import { Box, Grid, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import FooterItem from './FooterItem';
+import TwitterFeed from './TwitterFeed';
 import Funders from './Funders';
 import UsefulLinks from './UsefulLinks';
 
@@ -22,6 +23,7 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <Box className={classes.footer} mt={8}>
+      <TwitterFeed />
       <UsefulLinks />
       <Funders />
       <Box p={3} bgcolor="primary.main">
