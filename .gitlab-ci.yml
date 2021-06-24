@@ -1,8 +1,8 @@
 # codecov removed 2021-04-15 after security breach notice
 
 stages:
-  - docker_build
-  - docker_push
+  - build
+  - push
   
   
 variables:
@@ -16,27 +16,11 @@ Build:
     - openstack-autoscale-theta
   script:
     - docker info
-    - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_SHA} 🐳"
-    - docker pull ${IMAGE_NAME}:unstable || true
-    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:unstable --tag ${IMAGE_NAME}:commit-${CI_COMMIT_SHORT_SHA} ./api/
-    - echo "🐳 Pushing ${IMAGE_NAME}:commit-${CI_COMMIT_SHORT_SHA} 🐳"
-    - docker push ${IMAGE_NAME}:commit-${CI_COMMIT_SHORT_SHA}
-
-# at every push/merge to master, tag the latest image builds as 'unstable'
-Push unstable:
-  variables:
-    # only working with docker images; don't need to clone repo
-    GIT_STRATEGY: none
-  stage: push
-  tags:
-    - openstack-autoscale-theta
-  only:
-    - master
-  script:
-    - docker pull ${IMAGE_NAME}:commit-${CI_COMMIT_SHORT_SHA}
-    - docker tag  ${IMAGE_NAME}:commit-${CI_COMMIT_SHORT_SHA} ${IMAGE_NAME}:unstable
-    - echo "🐳 Pushing ${IMAGE_NAME}:unstable 🐳"
-    - docker push ${IMAGE_NAME}:unstable
+    - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_TAG} 🐳"
+    - docker pull ${IMAGE_NAME}:latest || true
+    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_TAG} ./api/
+    - echo "🐳 Pushing ${IMAGE_NAME}:${CI_COMMIT_TAG} 🐳"
+    - docker push ${IMAGE_NAME}:${CI_COMMIT_TAG}
 
 # at every release/tag, tag the images built from the latest image builds as 'latest'
 Push tag:
@@ -49,77 +33,10 @@ Push tag:
   only:
     - tags
   script:
-    - docker pull ${IMAGE_NAME}:commit-${CI_COMMIT_SHORT_SHA}
+    - docker pull ${IMAGE_NAME}:${CI_COMMIT_TAG}
     - >
          for this_tag in $CI_COMMIT_REF_NAME 'latest'; do
-            docker tag  ${IMAGE_NAME}:commit-${CI_COMMIT_SHORT_SHA} ${IMAGE_NAME}:${this_tag}
+            docker tag  ${IMAGE_NAME}:${CI_COMMIT_TAG} ${IMAGE_NAME}:${this_tag}
             echo "🐳 Pushing ${IMAGE_NAME}:${this_tag} 🐳"
             docker push ${IMAGE_NAME}:${this_tag}
-         done
-
-
-# at every push/merge to master, tag the latest image builds as 'unstable'
-Docker push as 'unstable':
-  variables:
-    # only docker, don't need to clone repo
-    GIT_STRATEGY: none
-  stage: docker_push
-  only:
-    - master
-  tags:
-    - openstack-autoscale-theta
-  image: "${DOCKER_IMAGE}"
-  services:
-    - name:  "${DOCKER_DIND_IMAGE}"
-      alias: docker
-  variables:
-    DOCKER_BUILDKIT:      1
-    DOCKER_TLS_CERTDIR:   ""
-    DOCKER_HOST:          "tcp://docker:2375"
-  before_script:
-    - echo -n ${CI_JOB_TOKEN} | docker login -u gitlab-ci-token --password-stdin ${CI_REGISTRY}
-  script:
-    - >
-         for this_image in juno-app;
-         do
-            this_commit_tag="commit-${CI_COMMIT_SHORT_SHA}";
-            docker pull $CI_REGISTRY_IMAGE/${this_image}:${this_commit_tag};
-            docker tag  $CI_REGISTRY_IMAGE/${this_image}:${this_commit_tag} $CI_REGISTRY_IMAGE/${this_image}:unstable;
-            echo "🐳 Pushing ${CI_REGISTRY_IMAGE}:${this_image}:unstable 🐳";
-            docker push $CI_REGISTRY_IMAGE/${this_image}:unstable;
-         done
-
-         
-# at every release/tag, tag the images built from the latest image builds with the release tag and also as 'latest'
-Docker push with release tag and as 'latest':
-  variables:
-    # only docker, don't need to clone repo
-    GIT_STRATEGY: none
-  stage: docker_push
-  only:
-    - tags
-  tags:
-    - openstack-autoscale-theta
-  image: "${DOCKER_IMAGE}"
-  services:
-    - name:  "${DOCKER_DIND_IMAGE}"
-      alias: docker
-  variables:
-    DOCKER_BUILDKIT:      1
-    DOCKER_TLS_CERTDIR:   ""
-    DOCKER_HOST:          "tcp://docker:2375"
-  before_script:
-    - echo -n ${CI_JOB_TOKEN} | docker login -u gitlab-ci-token --password-stdin ${CI_REGISTRY}
-  script:
-    - >
-         for this_image in juno-app;
-         do
-            this_commit_tag="commit-${CI_COMMIT_SHORT_SHA}";
-            docker pull $CI_REGISTRY_IMAGE/${this_image}:${this_commit_tag};
-            for this_tag in $CI_COMMIT_REF_NAME 'latest';
-            do
-               docker tag  $CI_REGISTRY_IMAGE/${this_image}:${this_commit_tag} $CI_REGISTRY_IMAGE/${this_image}:${this_tag};
-               echo "🐳 Pushing ${CI_REGISTRY_IMAGE}:${this_image}:${this_tag} 🐳";
-               docker push $CI_REGISTRY_IMAGE/${this_image}:${this_tag};
-            done;
          done
