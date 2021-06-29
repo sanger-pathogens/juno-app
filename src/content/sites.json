@@ -1,5 +1,6 @@
 [
     { "label": "Bentley Group", "url": "https://bentleygroup.sanger.ac.uk/" },
     { "label": "GPS", "url": "https://www.pneumogen.net/" },
+    { "label": "Monocle", "url": "https://monocle.sanger.ac.uk/" },
     { "label": "Training", "url": "https://training.bactgen.sanger.ac.uk/" }
 ]
