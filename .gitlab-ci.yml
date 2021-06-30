@@ -29,7 +29,7 @@ Build:
     - docker info
     - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
     - docker pull ${IMAGE_NAME}:latest || true
-    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} ./api/
+    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} .
     - echo "🐳 Pushing ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
     - docker push ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
 
