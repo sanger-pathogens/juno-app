@@ -10,7 +10,7 @@ variables:
   DOCKER_DIND_IMAGE:        "${CI_REGISTRY_IMAGE}/gitlab-ci-dind:latest"
 
 services:
-  - name:  gitlab-registry.internal.sanger.ac.uk/sanger-pathogens/juno-app/gitlab-ci-dind:gitlab-registry.internal.sanger.ac.uk/sanger-pathogens/juno-app/gitlab-ci-dind:0e24a82512bd6f5721420a5833e0dc5ee621936e
+  - name:  gitlab-registry.internal.sanger.ac.uk/sanger-pathogens/juno-app/gitlab-ci-dind:0e24a82512bd6f5721420a5833e0dc5ee621936e
     alias: docker
 
 before_script:
