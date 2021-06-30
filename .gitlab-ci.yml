@@ -29,33 +29,33 @@ Build:
     - docker info
     - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
     - docker pull ${IMAGE_NAME}:latest || true
-    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} ./api/
-    #- echo "🐳 Pushing ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
-    #- docker push ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
+    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} .
+    - echo "🐳 Pushing ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
+    - docker push ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
 
-## at every release/tag, tag the images built from the latest image builds as 'latest'
-#Push tag:
-  #variables:
-    ## only working with docker images; don't need to clone repo
-    #GIT_STRATEGY: none
-  #stage: push
-  #tags:
-    #- openstack-autoscale-theta
-  #image: "${DOCKER_IMAGE}"
-  #services:
-    #- name:  "${DOCKER_DIND_IMAGE}"
-      #alias: docker
-  #variables:
-    #DOCKER_BUILDKIT:      1
-    #DOCKER_TLS_CERTDIR:   ""
-    #DOCKER_HOST:          "tcp://docker:2375"
-  #only:
-    #- tags
-  #script:
-    #- docker pull ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
-    #- >
-         #for this_tag in $CI_COMMIT_REF_NAME 'latest'; do
-            #docker tag  ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} ${IMAGE_NAME}:${this_tag}
-            #echo "🐳 Pushing ${IMAGE_NAME}:${this_tag} 🐳"
-            #docker push ${IMAGE_NAME}:${this_tag}
-         #done
+# at every release/tag, tag the images built from the latest image builds as 'latest'
+Push tag:
+  variables:
+    # only working with docker images; don't need to clone repo
+    GIT_STRATEGY: none
+  stage: push
+  tags:
+    - openstack-autoscale-theta
+  image: "${DOCKER_IMAGE}"
+  services:
+    - name:  "${DOCKER_DIND_IMAGE}"
+      alias: docker
+  variables:
+    DOCKER_BUILDKIT:      1
+    DOCKER_TLS_CERTDIR:   ""
+    DOCKER_HOST:          "tcp://docker:2375"
+  only:
+    - tags
+  script:
+    - docker pull ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
+    - >
+         for this_tag in $CI_COMMIT_REF_NAME 'latest'; do
+            docker tag  ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} ${IMAGE_NAME}:${this_tag}
+            echo "🐳 Pushing ${IMAGE_NAME}:${this_tag} 🐳"
+            docker push ${IMAGE_NAME}:${this_tag}
+         done
