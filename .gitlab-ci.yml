@@ -27,11 +27,11 @@ Build:
     DOCKER_HOST:          "tcp://docker:2375"
   script:
     - docker info
-    - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_TAG} 🐳"
+    - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
     - docker pull ${IMAGE_NAME}:latest || true
-    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_TAG} ./api/
-    - echo "🐳 Pushing ${IMAGE_NAME}:${CI_COMMIT_TAG} 🐳"
-    - docker push ${IMAGE_NAME}:${CI_COMMIT_TAG}
+    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} ./api/
+    - echo "🐳 Pushing ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
+    - docker push ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
 
 # at every release/tag, tag the images built from the latest image builds as 'latest'
 Push tag:
@@ -52,10 +52,10 @@ Push tag:
   only:
     - tags
   script:
-    - docker pull ${IMAGE_NAME}:${CI_COMMIT_TAG}
+    - docker pull ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
     - >
          for this_tag in $CI_COMMIT_REF_NAME 'latest'; do
-            docker tag  ${IMAGE_NAME}:${CI_COMMIT_TAG} ${IMAGE_NAME}:${this_tag}
+            docker tag  ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} ${IMAGE_NAME}:${this_tag}
             echo "🐳 Pushing ${IMAGE_NAME}:${this_tag} 🐳"
             docker push ${IMAGE_NAME}:${this_tag}
          done
