@@ -1,0 +1,61 @@
+# codecov removed 2021-04-15 after security breach notice
+
+stages:
+  - build
+  - push
+  
+  
+variables:
+  IMAGE_NAME:               "${CI_REGISTRY_IMAGE}/juno-app"
+  DOCKER_IMAGE:             "${CI_REGISTRY_IMAGE}/docker:19"
+  DOCKER_DIND_IMAGE:        "${CI_REGISTRY_IMAGE}/gitlab-ci-dind:0e24a82512bd6f5721420a5833e0dc5ee621936e"
+
+before_script:
+  - echo -n ${CI_JOB_TOKEN} | docker login -u gitlab-ci-token --password-stdin ${CI_REGISTRY}
+
+Build:
+  stage: build
+  tags:
+    - openstack-autoscale-theta
+  image: "${DOCKER_IMAGE}"
+  services:
+    - name:  "${DOCKER_DIND_IMAGE}"
+      alias: docker
+  variables:
+    DOCKER_BUILDKIT:      1
+    DOCKER_TLS_CERTDIR:   ""
+    DOCKER_HOST:          "tcp://docker:2375"
+  script:
+    - docker info
+    - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
+    - docker pull ${IMAGE_NAME}:latest || true
+    - docker build --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from ${IMAGE_NAME}:latest --tag ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} .
+    - echo "🐳 Pushing ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} 🐳"
+    - docker push ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
+
+# at every release/tag, tag the images built from the latest image builds as 'latest'
+Push tag:
+  variables:
+    # only working with docker images; don't need to clone repo
+    GIT_STRATEGY: none
+  stage: push
+  tags:
+    - openstack-autoscale-theta
+  image: "${DOCKER_IMAGE}"
+  services:
+    - name:  "${DOCKER_DIND_IMAGE}"
+      alias: docker
+  variables:
+    DOCKER_BUILDKIT:      1
+    DOCKER_TLS_CERTDIR:   ""
+    DOCKER_HOST:          "tcp://docker:2375"
+  only:
+    - tags
+  script:
+    - docker pull ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
+    - >
+         for this_tag in $CI_COMMIT_REF_NAME 'latest'; do
+            docker tag  ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA} ${IMAGE_NAME}:${this_tag}
+            echo "🐳 Pushing ${IMAGE_NAME}:${this_tag} 🐳"
+            docker push ${IMAGE_NAME}:${this_tag}
+         done
