@@ -24,6 +24,7 @@ Build:
   stage: build
   tags:
     - openstack-autoscale-theta
+  image: "${DOCKER_IMAGE}"
   script:
     - docker info
     - echo "🐳 Building ${IMAGE_NAME}:${CI_COMMIT_TAG} 🐳"
@@ -40,6 +41,7 @@ Push tag:
   stage: push
   tags:
     - openstack-autoscale-theta
+  image: "${DOCKER_IMAGE}"
   only:
     - tags
   script:
