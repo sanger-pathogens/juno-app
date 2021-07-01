@@ -12,7 +12,7 @@ VERSION=$1
 REMOTE_USER=$2
 REMOTE_HOST=$3
 APP=juno-app
-IMAGE_URL=gitlab-registry.internal.sanger.ac.uk/sanger-pathogens/juno-app/
+IMAGE_URL=gitlab-registry.internal.sanger.ac.uk/sanger-pathogens/juno-app/${APP}
 EXPOSED_PORT=8000
 
 # Replace the running version
